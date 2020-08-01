@@ -26,13 +26,13 @@ namespace MVC_ASP_DOT_NET.Tests.Controllers
         }
 
         [TestMethod]
-        public void About()
+        public void Ab()
         {
             // Arrange
             HomeController controller = new HomeController();
 
             // Act
-            ViewResult result = controller.About() as ViewResult;
+            ViewResult result = controller.Ab() as ViewResult;
 
             // Assert
             Assert.AreEqual("Your application description page.", result.ViewBag.Message);

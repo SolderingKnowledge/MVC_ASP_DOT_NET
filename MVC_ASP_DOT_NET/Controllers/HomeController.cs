@@ -13,16 +13,16 @@ namespace MVC_ASP_DOT_NET.Controllers
             return View();
         }
 
-        public ActionResult About()
+        public ActionResult Ab()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "About page is here";
 
             return View();
         }
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "Contact page is here";
 
             return View();
         }
