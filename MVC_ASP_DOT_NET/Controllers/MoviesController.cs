@@ -14,7 +14,7 @@ namespace MVC_ASP_DOT_NET.Controllers
         //public ViewResult Random()
         public ActionResult Random()
         {
-            var movie = new Movie() { Name = "Shrek" };
+            var movie = new Movie() { Name = "Passionate" };
             return View(movie);
 
 
@@ -54,6 +54,40 @@ namespace MVC_ASP_DOT_NET.Controllers
         {
             
             return Content(year + "/" + month);
+        }
+
+
+        // GET: movies/favorite => http://localhost:19811/movies/favorite/matrix/2015/04 => matrix, 2015: 4
+        [Route("movies/favorite/{movie}/{year}/{month:regex(\\d{2})}")]
+        public ActionResult Favorite(string movie, int year, int month)
+        {
+
+            return Content(movie+", " + year + ": " + month);
+        }
+
+        // Get: testing how to padding data to view
+        public ActionResult Testing()
+        {
+            var movie = new Movie() { Name = "Handsome" };
+            //ViewData["Movie"] = movie;
+            //ViewBag.Movie = movie;
+            //return View();
+            return View(movie);
+        }
+        public ActionResult TestingModel()
+        {
+            var movie = new Movie() { Name = "Handsome" };
+            var customers = new List<Customer>
+            {
+                new Customer {Name="Belek"},
+                new Customer {Name="Azamat" }
+            };
+            var viewModel = new RandomMovieViewModel()
+            {
+                Movie = movie,
+                Customers = customers
+            };
+            return View(viewModel);
         }
     }
 }

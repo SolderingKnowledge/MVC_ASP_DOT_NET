@@ -12,6 +12,11 @@ namespace MVC_ASP_DOT_NET
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+
+            // attribute routing
+            routes.MapMvcAttributeRoutes();
+
+
             // custom route
             routes.MapRoute(
                 "MoviesByReleasedate",// name
